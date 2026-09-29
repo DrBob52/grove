@@ -1,0 +1,21 @@
+name: Plant assets
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Check plant assets
+        run: python3 scripts/check_plant_assets.py
