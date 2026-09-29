@@ -1,0 +1,10 @@
+# Packages for scripts/convert_plant.py (the GLB to USDZ converter).
+# Install with: .venv/bin/pip install -r scripts/requirements-convert.txt
+#
+# usd-core is Pixar's USD library. Version 26.8 has wheels for Python 3.9 to
+# 3.14 on macOS (universal2, so Apple silicon is covered) and Linux x86_64.
+usd-core==26.8
+# numpy 2.3 and later need Python 3.11 or newer, so Python 3.10 gets the last
+# release that supports it.
+numpy==2.4.6; python_version >= "3.11"
+numpy==2.2.6; python_version < "3.11"

@@ -1,1 +1,3 @@
-[]
+[
+  { "id": "placeholder-a-01", "displayName": "Placeholder Plant", "category": "placeholder", "heightMeters": 0.44, "thumbnail": "placeholder-a-01-thumb", "model": "placeholder-a-01" }
+]

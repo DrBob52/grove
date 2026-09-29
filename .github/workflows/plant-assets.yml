@@ -19,3 +19,17 @@ jobs:
         run: python3 -m unittest discover -s scripts/tests -v
       - name: Check plant assets
         run: python3 scripts/check_plant_assets.py
+
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install converter packages
+        run: pip install -r scripts/requirements-convert.txt
+      - name: Run unit tests (usd-core is installed, so the conversion tests run)
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Convert the committed placeholder plant and check the result
+        run: python3 scripts/convert_plant.py placeholder-a-01
